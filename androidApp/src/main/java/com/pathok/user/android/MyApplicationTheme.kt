@@ -1,4 +1,4 @@
-package com.byteutility.dev.pathok.android
+package com.pathok.user.android
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape

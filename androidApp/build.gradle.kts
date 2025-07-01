@@ -5,10 +5,10 @@ plugins {
 }
 
 android {
-    namespace = "com.byteutility.dev.pathok.android"
+    namespace = "com.pathok.user.android"
     compileSdk = 35
     defaultConfig {
-        applicationId = "com.byteutility.dev.pathok.android"
+        applicationId = "com.pathok.user.android"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

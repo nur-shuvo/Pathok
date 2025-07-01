@@ -1,4 +1,4 @@
-package com.byteutility.dev.pathok
+package com.pathok.user
 
 class Greeting {
     private val platform: Platform = getPlatform()

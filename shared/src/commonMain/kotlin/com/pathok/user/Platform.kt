@@ -1,4 +1,4 @@
-package com.byteutility.dev.pathok
+package com.pathok.user
 
 interface Platform {
     val name: String

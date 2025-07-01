@@ -38,7 +38,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.byteutility.dev.pathok"
+    namespace = "com.pathok.user"
     compileSdk = 35
     defaultConfig {
         minSdk = 24
