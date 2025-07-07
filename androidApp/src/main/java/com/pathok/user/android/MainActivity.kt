@@ -9,10 +9,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.pathok.user.Greeting
+import com.pathok.user.data.PathokSampleRepository
+import org.koin.android.ext.android.inject
 
 class MainActivity : ComponentActivity() {
+
+    private val pathokSampleRepository: PathokSampleRepository by inject()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        pathokSampleRepository.doSomething()
+
         setContent {
             MyApplicationTheme {
                 Surface(
@@ -35,6 +43,6 @@ fun GreetingView(text: String) {
 @Composable
 fun DefaultPreview() {
     MyApplicationTheme {
-        GreetingView("Hello, Android!")
+        GreetingView("Hello, Pathok user!")
     }
 }
