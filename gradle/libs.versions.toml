@@ -6,6 +6,7 @@ compose-material3 = "1.1.2"
 androidx-activityCompose = "1.8.0"
 koin = "4.1.0"
 kotlinx-serialization = "1.8.1"
+kmpObservableViewmodel = "1.0.0-BETA-12"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -18,6 +19,7 @@ compose-material3 = { module = "androidx.compose.material3:material3", version.r
 koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+kmp-observable-viewmodel = { module = "com.rickclephas.kmp:kmp-observableviewmodel-core", version.ref = "kmpObservableViewmodel" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

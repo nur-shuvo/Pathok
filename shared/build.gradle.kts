@@ -32,11 +32,16 @@ kotlin {
         commonMain.dependencies {
             //put your multiplatform dependencies here
             implementation(libs.koin.core)
-//            implementation(libs.kotlinx.serialization.core)
             implementation(libs.kotlinx.serialization.json)
+            api(libs.kmp.observable.viewmodel)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+        }
+        // Required by KMM-ViewModel
+        all {
+            languageSettings.optIn("kotlinx.cinterop.ExperimentalForeignApi")
+            languageSettings.optIn("kotlin.experimental.ExperimentalObjCName")
         }
     }
 }
