@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
         pathokSampleRepository.doSomething()
 
         setContent {
-            MyApplicationTheme {
+            PathokTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -42,7 +42,7 @@ fun GreetingView(text: String) {
 @Preview
 @Composable
 fun DefaultPreview() {
-    MyApplicationTheme {
+    PathokTheme {
         GreetingView("Hello, Pathok user!")
     }
 }
