@@ -14,7 +14,11 @@ import com.pathok.user.android.PathokTheme
  * Created by Shuvo on 08/04/2025.
  */
 @Composable
-fun PrimaryActionButton(text: String, modifier: Modifier = Modifier, onClick: () -> Unit = {}) {
+fun PrimaryActionButton(
+    text: String,
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit = {}
+) {
     Button(
         onClick = {
             onClick()

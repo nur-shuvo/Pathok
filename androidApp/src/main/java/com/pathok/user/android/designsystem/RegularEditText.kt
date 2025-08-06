@@ -25,6 +25,7 @@ import com.pathok.user.android.PathokTheme
 fun RegularEditText(
     label: String,
     value: String,
+    showRequiredText: Boolean,
     onValueChange: (String) -> Unit,
     modifier: Modifier = Modifier,
     placeholder: String = ""
@@ -34,10 +35,11 @@ fun RegularEditText(
             text = buildAnnotatedString {
                 append(label)
                 withStyle(style = SpanStyle(color = Color.Red)) {
-                    append(" (Required)")
+                    if (showRequiredText) append(" (Required)") else ""
                 }
             },
-            modifier = Modifier.padding(bottom = 8.dp)
+            color = Color.White,
+            modifier = Modifier.padding(4.dp)
         )
         OutlinedTextField(
             value = value,
@@ -57,12 +59,28 @@ fun RegularEditText(
 
 @Preview(showBackground = true)
 @Composable
-fun PreviewRegularEditText() {
+fun PreviewRegularEditTextRequired() {
     var text by remember { mutableStateOf("") }
     PathokTheme {
         RegularEditText(
             label = "Bio",
             value = text,
+            true,
+            onValueChange = { text = it },
+            placeholder = "Enter short bio of yourself"
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewRegularEditTextOptional() {
+    var text by remember { mutableStateOf("") }
+    PathokTheme {
+        RegularEditText(
+            label = "Bio",
+            value = text,
+            false,
             onValueChange = { text = it },
             placeholder = "Enter short bio of yourself"
         )
