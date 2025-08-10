@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.pathok.user.Greeting
+import com.pathok.user.android.design_system.PathokTheme
 import com.pathok.user.data.PathokSampleRepository
 import org.koin.android.ext.android.inject
 
@@ -22,7 +23,7 @@ class MainActivity : ComponentActivity() {
         pathokSampleRepository.doSomething()
 
         setContent {
-            MyApplicationTheme {
+            PathokTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -42,7 +43,7 @@ fun GreetingView(text: String) {
 @Preview
 @Composable
 fun DefaultPreview() {
-    MyApplicationTheme {
+    PathokTheme  {
         GreetingView("Hello, Pathok user!")
     }
 }
