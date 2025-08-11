@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.pathok.user.android.R
 
-data class SellPostData(
+data class DonationPostData(
     val uploaderName: String,
     val bookTitle: String,
     val authorName: String,
@@ -40,10 +40,10 @@ data class SellPostData(
 
 @SuppressLint("ResourceType")
 @Composable
-fun CommonSellPostCard(
+fun CommonDonationPostCard(
     modifier: Modifier = Modifier,
     postData: DonationPostData,
-    showBuyButton: Boolean = true,
+    showAcceptDonationButton: Boolean = true,
     onClicked: () -> Unit = {}
 ) {
     Card(
@@ -107,7 +107,7 @@ fun CommonSellPostCard(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                if (showBuyButton) {
+                if (showAcceptDonationButton) {
                     PrimaryActionButton(
                         text = "Click to Buy",
                         onClick = onClicked,
@@ -116,7 +116,7 @@ fun CommonSellPostCard(
                 } else {
                     Spacer(modifier = Modifier.weight(1f))
                 }
-                if (showBuyButton) {
+                if (showAcceptDonationButton) {
                     Text(
                         text = postData.distanceInKm,
                         style = MaterialTheme.typography.bodyMedium,
@@ -151,7 +151,7 @@ private fun InfoRow(icon: ImageVector, text: String) {
 
 @Preview(showBackground = true)
 @Composable
-fun CommonSellPostCardPreview() {
+fun CommonDonationPostCardPreview() {
     val sampleData = DonationPostData(
         uploaderName = "Md. Hasan Manhmud",
         bookTitle = "ইছামতি",
@@ -163,16 +163,16 @@ fun CommonSellPostCardPreview() {
         bookCoverUrl = ""
     )
     PathokTheme {
-        CommonSellPostCard(
+        CommonDonationPostCard(
             postData = sampleData,
-            showBuyButton = true
+            showAcceptDonationButton = true
         )
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun CommonSellPostCardNoButtonPreview() {
+fun CommonDonationPostCardNoButtonPreview() {
     val sampleData = DonationPostData(
         uploaderName = "Md. Hasan Manhmud",
         bookTitle = "ইছামতি",
@@ -184,9 +184,9 @@ fun CommonSellPostCardNoButtonPreview() {
         bookCoverUrl = ""
     )
     PathokTheme {
-        CommonSellPostCard(
+        CommonDonationPostCard(
             postData = sampleData,
-            showBuyButton = false
+            showAcceptDonationButton = false
         )
     }
 }
