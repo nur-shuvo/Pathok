@@ -1,4 +1,4 @@
-package com.pathok.user.android.designsystem
+package com.pathok.user.android.design_system
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.clickable

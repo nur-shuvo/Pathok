@@ -1,4 +1,4 @@
-package com.pathok.user.android.designsystem
+package com.pathok.user.android.design_system
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.wrapContentHeight
