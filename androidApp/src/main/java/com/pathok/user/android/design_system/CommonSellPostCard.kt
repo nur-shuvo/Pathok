@@ -25,7 +25,6 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.pathok.user.android.PathokTheme
 import com.pathok.user.android.R
 
 data class SellPostData(

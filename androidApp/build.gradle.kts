@@ -45,4 +45,5 @@ dependencies {
     debugImplementation(libs.compose.ui.tooling)
     implementation(libs.koin.androidx.compose)
     implementation(libs.androidx.ui.text.google.fonts)
+    implementation(libs.coil.compose)
 }
