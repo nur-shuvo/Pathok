@@ -1,4 +1,4 @@
-package com.pathok.user.android.design_system
+package com.pathok.user.android.design_system.widgets
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.clickable
@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.pathok.user.android.R
 
-data class DonationPostData(
+data class SellPostData(
     val uploaderName: String,
     val bookTitle: String,
     val authorName: String,
@@ -40,10 +40,10 @@ data class DonationPostData(
 
 @SuppressLint("ResourceType")
 @Composable
-fun CommonDonationPostCard(
+fun CommonSellPostCard(
     modifier: Modifier = Modifier,
-    postData: DonationPostData,
-    showAcceptDonationButton: Boolean = true,
+    postData: SellPostData,
+    showBuyButton: Boolean = true,
     onClicked: () -> Unit = {}
 ) {
     Card(
@@ -107,7 +107,7 @@ fun CommonDonationPostCard(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                if (showAcceptDonationButton) {
+                if (showBuyButton) {
                     PrimaryActionButton(
                         text = "Click to Buy",
                         onClick = onClicked,
@@ -116,7 +116,7 @@ fun CommonDonationPostCard(
                 } else {
                     Spacer(modifier = Modifier.weight(1f))
                 }
-                if (showAcceptDonationButton) {
+                if (showBuyButton) {
                     Text(
                         text = postData.distanceInKm,
                         style = MaterialTheme.typography.bodyMedium,
@@ -151,8 +151,8 @@ private fun InfoRow(icon: ImageVector, text: String) {
 
 @Preview(showBackground = true)
 @Composable
-fun CommonDonationPostCardPreview() {
-    val sampleData = DonationPostData(
+fun CommonSellPostCardPreview() {
+    val sampleData = SellPostData(
         uploaderName = "Md. Hasan Manhmud",
         bookTitle = "ইছামতি",
         authorName = "বিভূতিভূষণ বন্দ্যোপাধ্যায়",
@@ -162,18 +162,18 @@ fun CommonDonationPostCardPreview() {
         distanceInKm = "8 km away",
         bookCoverUrl = ""
     )
-    PathokTheme {
-        CommonDonationPostCard(
+    _root_ide_package_.com.pathok.user.android.design_system.PathokTheme {
+        CommonSellPostCard(
             postData = sampleData,
-            showAcceptDonationButton = true
+            showBuyButton = true
         )
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun CommonDonationPostCardNoButtonPreview() {
-    val sampleData = DonationPostData(
+fun CommonSellPostCardNoButtonPreview() {
+    val sampleData = SellPostData(
         uploaderName = "Md. Hasan Manhmud",
         bookTitle = "ইছামতি",
         authorName = "বিভূতিভূষণ বন্দ্যোপাধ্যায়",
@@ -183,10 +183,10 @@ fun CommonDonationPostCardNoButtonPreview() {
         distanceInKm = "8 km away",
         bookCoverUrl = ""
     )
-    PathokTheme {
-        CommonDonationPostCard(
+    _root_ide_package_.com.pathok.user.android.design_system.PathokTheme {
+        CommonSellPostCard(
             postData = sampleData,
-            showAcceptDonationButton = false
+            showBuyButton = false
         )
     }
 }

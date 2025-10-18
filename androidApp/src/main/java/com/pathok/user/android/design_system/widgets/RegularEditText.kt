@@ -1,4 +1,4 @@
-package com.pathok.user.android.design_system
+package com.pathok.user.android.design_system.widgets
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -60,7 +60,7 @@ fun RegularEditText(
 @Composable
 fun PreviewRegularEditTextRequired() {
     var text by remember { mutableStateOf("") }
-    PathokTheme {
+    _root_ide_package_.com.pathok.user.android.design_system.PathokTheme {
         RegularEditText(
             label = "Bio",
             value = text,
@@ -75,7 +75,7 @@ fun PreviewRegularEditTextRequired() {
 @Composable
 fun PreviewRegularEditTextOptional() {
     var text by remember { mutableStateOf("") }
-    PathokTheme {
+    _root_ide_package_.com.pathok.user.android.design_system.PathokTheme {
         RegularEditText(
             label = "Bio",
             value = text,

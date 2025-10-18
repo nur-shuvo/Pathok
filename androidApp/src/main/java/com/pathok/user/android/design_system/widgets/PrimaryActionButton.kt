@@ -1,4 +1,4 @@
-package com.pathok.user.android.design_system
+package com.pathok.user.android.design_system.widgets
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.wrapContentHeight
@@ -34,7 +34,7 @@ fun PrimaryActionButton(
 @Preview
 @Composable
 fun PreviewGreenPrimaryButton() {
-    PathokTheme {
+    _root_ide_package_.com.pathok.user.android.design_system.PathokTheme {
         PrimaryActionButton(text = "Proceed")
     }
 }

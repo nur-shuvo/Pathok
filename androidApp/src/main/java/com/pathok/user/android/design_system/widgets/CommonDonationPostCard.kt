@@ -1,4 +1,4 @@
-package com.pathok.user.android.design_system
+package com.pathok.user.android.design_system.widgets
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.clickable
@@ -26,8 +26,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.pathok.user.android.R
+import com.pathok.user.android.design_system.PathokTheme
 
-data class SellPostData(
+data class DonationPostData(
     val uploaderName: String,
     val bookTitle: String,
     val authorName: String,
@@ -40,10 +41,10 @@ data class SellPostData(
 
 @SuppressLint("ResourceType")
 @Composable
-fun CommonSellPostCard(
+fun CommonDonationPostCard(
     modifier: Modifier = Modifier,
     postData: DonationPostData,
-    showBuyButton: Boolean = true,
+    showAcceptDonationButton: Boolean = true,
     onClicked: () -> Unit = {}
 ) {
     Card(
@@ -107,7 +108,7 @@ fun CommonSellPostCard(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                if (showBuyButton) {
+                if (showAcceptDonationButton) {
                     PrimaryActionButton(
                         text = "Click to Buy",
                         onClick = onClicked,
@@ -116,7 +117,7 @@ fun CommonSellPostCard(
                 } else {
                     Spacer(modifier = Modifier.weight(1f))
                 }
-                if (showBuyButton) {
+                if (showAcceptDonationButton) {
                     Text(
                         text = postData.distanceInKm,
                         style = MaterialTheme.typography.bodyMedium,
@@ -151,7 +152,7 @@ private fun InfoRow(icon: ImageVector, text: String) {
 
 @Preview(showBackground = true)
 @Composable
-fun CommonSellPostCardPreview() {
+fun CommonDonationPostCardPreview() {
     val sampleData = DonationPostData(
         uploaderName = "Md. Hasan Manhmud",
         bookTitle = "ইছামতি",
@@ -162,17 +163,17 @@ fun CommonSellPostCardPreview() {
         distanceInKm = "8 km away",
         bookCoverUrl = ""
     )
-    PathokTheme {
-        CommonSellPostCard(
+    _root_ide_package_.com.pathok.user.android.design_system.PathokTheme {
+        CommonDonationPostCard(
             postData = sampleData,
-            showBuyButton = true
+            showAcceptDonationButton = true
         )
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun CommonSellPostCardNoButtonPreview() {
+fun CommonDonationPostCardNoButtonPreview() {
     val sampleData = DonationPostData(
         uploaderName = "Md. Hasan Manhmud",
         bookTitle = "ইছামতি",
@@ -184,9 +185,9 @@ fun CommonSellPostCardNoButtonPreview() {
         bookCoverUrl = ""
     )
     PathokTheme {
-        CommonSellPostCard(
+        CommonDonationPostCard(
             postData = sampleData,
-            showBuyButton = false
+            showAcceptDonationButton = false
         )
     }
 }
